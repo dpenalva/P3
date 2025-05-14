@@ -118,7 +118,7 @@ function handleResize() {
     windowWidth.value = window.innerWidth;
     if (windowWidth.value > 768) {
         menuOpen.value = true; 
-    } else if (!menuOpen.value) {
+    } else {
         menuOpen.value = false; 
     }
 }
