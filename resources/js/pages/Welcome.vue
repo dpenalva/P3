@@ -13,37 +13,6 @@ const props = defineProps({
     },
 });
 
-const indiceActual = ref(0);
-const totalSlides = computed(() => props.ciclesDestacados.length || 1);
-
-function siguienteSlide() {
-    indiceActual.value = (indiceActual.value + 1) % totalSlides.value;
-}
-
-function anteriorSlide() {
-    indiceActual.value = (indiceActual.value - 1 + totalSlides.value) % totalSlides.value;
-}
-
-let intervalo;
-onMounted(() => {
-    intervalo = setInterval(siguienteSlide, 5000); 
-    
-    document.addEventListener('keydown', manejarTeclado);
-});
-
-onBeforeUnmount(() => {
-    clearInterval(intervalo);
-    document.removeEventListener('keydown', manejarTeclado);
-});
-
-function manejarTeclado(e) {
-    if (e.key === 'ArrowLeft') {
-        anteriorSlide();
-    } else if (e.key === 'ArrowRight') {
-        siguienteSlide();
-    }
-}
-
 const irAListadoCicles = () => {
     router.visit(route('cicles.index'));
 };

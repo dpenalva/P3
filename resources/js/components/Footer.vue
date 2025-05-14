@@ -14,5 +14,4 @@
 </template>
 
 <script setup>
-import CookieConsent from '@/components/CookieConsent.vue';
 </script> 

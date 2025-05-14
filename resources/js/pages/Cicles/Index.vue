@@ -186,7 +186,7 @@ function buscarConAxios() {
         .catch(error => {
             ciclesFiltrados.value = [];
         });
-    }, 300);
+    }, );
 }
 
 // Eliminar Cicle 

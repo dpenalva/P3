@@ -15,7 +15,6 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'ciclesDestacados' => Cicles::inRandomOrder()->limit(5)->get(),
         'familias' => Familia::all()
     ]);
 })->name('home');
